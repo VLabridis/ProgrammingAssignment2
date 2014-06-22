@@ -18,9 +18,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## Write a short comment describing this function
-
+## Return a matrix that is the inverse of 'x'
 cacheSolve <- function(chacheContainer, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  
    inv<-chacheContainer$getCached()
    if(!is.null(inv)){
       message("getting cached data")
@@ -34,4 +34,5 @@ cacheSolve <- function(chacheContainer, ...) {
 M=rbind(c(1, -1/4), c(-1/4, 1)) 
 cm<-makeCacheMatrix(M)
 print(cm$get())
-cacheSolve(x=cm)
+cacheSolve(cm)
+print(cm$getCached())
